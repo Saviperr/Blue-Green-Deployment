@@ -2,10 +2,11 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'ap-south-1'
-        ECR_REPO = '883644721688.dkr.ecr.ap-south-1.amazonaws.com/devops-app'
-        IMAGE_TAG = "v${BUILD_NUMBER}"
-    }
+    AWS_REGION = 'ap-south-1'
+    AWS_ACCOUNT_ID = '883644721688'
+    ECR_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com/devops-app"
+    IMAGE_TAG = "v${BUILD_NUMBER}"
+}
 
     stages {
 
